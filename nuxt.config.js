@@ -57,7 +57,7 @@ export default {
 
   proxy: {
     '/rest/api/': {
-      target: 'https://teamspiritdev.atlassian.net'
+      target: 'https://xxxxx.atlassian.net'
     }
   },
 
