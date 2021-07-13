@@ -52,13 +52,6 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    proxy: true
-  },
-
-  proxy: {
-    '/rest/api/': {
-      target: 'https://xxxxx.atlassian.net'
-    }
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

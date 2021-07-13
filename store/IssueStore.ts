@@ -14,7 +14,7 @@ async function fetchIssues (sprintId: string): Promise<Issue[]> {
   if (authInfo.isEmpty()) {
     return []
   }
-  const res = await $axios.get('http://localhost:3000/rest/api/3/search',
+  const res = await $axios.get(`${authInfo.domain}/rest/api/3/search`,
     {
       auth: {
         username: authInfo.email,
@@ -56,13 +56,16 @@ export default class IssueStore extends VuexModule {
     this.issues = [...this.issues, issue]
   }
 
+  @Mutation
+  setIssues (issues: Issue[]) {
+    this.issues = issues
+  }
+
   @Action({
     rawError: true
   })
   async loadIssues (sprintId: string) {
     const issues = await fetchIssues(sprintId)
-    issues.forEach((issue: any) => {
-      this.addIssue(issue)
-    })
+    this.setIssues(issues)
   }
 }
