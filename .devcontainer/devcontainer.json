@@ -5,6 +5,7 @@
     "extensions": [
         "dbaeumer.vscode-eslint",
         "octref.vetur",
-        "dariofuzinato.vue-peek"
+        "dariofuzinato.vue-peek",
+        "tabnine.tabnine-vscode"
     ]
 }
